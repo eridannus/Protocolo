@@ -1,0 +1,826 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{csquotes}
+\usepackage{smartdiagram}
+\usepackage{appendix}
+\usesmartdiagramlibrary{additions}
+\usetikzlibrary{mindmap,trees,positioning,shapes,shadows,arrows}
+
+\renewcommand{\appendixname}{Apéndices}
+\renewcommand{\appendixtocname}{Apéndices}
+\renewcommand{\appendixpagename}{Apéndices}
+
+\pagestyle{plain}
+\textwidth 6.5in
+\textheight 8.75in
+\oddsidemargin 0in
+\evensidemargin 0in
+\topmargin -0.5in
+
+\title{ Centro de Investigación y de Estudios Avanzados del IPN\\
+        Departamento de Computación \\
+        \textbf{Protocolo de tesis}
+}
+
+\author{
+Tesista: Luis Martín Sánchez Adame \\
+Directora de tesis: Dra. Sonia Guadalupe Mendoza Chapa
+%Dra. Beatriz Adriana González Beltrán
+}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Así como el diseño centrado en el usuario surgió en la década de 1950, podríamos estar presenciando la aparición de un nuevo enfoque de diseño, que está desarrollando principios que van más allá de ``un usuario'' y que se dirigen hacia ``un colectivo''. Este enfoque se denomina ``diseño centrado en la comunidad''. Una comunidad es un grupo social, de cualquier tamaño, que comparte intereses comunes. Para incentivar su crecimiento, de una manera constructiva, se busca aumentar la masa crítica de usuarios, así como la participación de sus miembros. La pertenencia de los usuarios a una comunidad se debe no sólo a su popularidad o a la calidad de sus contenidos, sino también a la usabilidad de sus mecanismos de interacción. En la literatura científica, existen diversos métodos de evaluación de usabilidad, pero muy pocos están orientados a las comunidades. Además, aquellos que sí lo están carecen de implementación o de detalles suficientes para llevarlos a la práctica. Para hacer frente a este problema, en este proyecto de investigación, se desarrollará un método de evaluación de usabilidad de los mecanismos de interacción en una comunidad web. El método propuesto ayudará a diseñar comunidades web y a identificar problemas en las ya existentes.
+\noindent
+\\
+\smallskip
+\textsf{Palabras clave: HCI, usabilidad, métodos de evaluación, comunidades, comunidades web, redes sociales, diseño web}
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Datos Generales}
+
+\subsection{Título de proyecto}
+Método de evaluación de usabilidad orientado a comunidades web
+
+\subsection{Datos del alumno}
+\begin{tabular}{ll}
+Nombre:  &          Luis Martín Sánchez Adame\\
+Dirección:   &  Aceros Nacionales No. 41\\
+			     & Col. Vista Hermosa\\
+			     & Tlalnepantla de Baz, Edo. de México\\
+Teléfono (casa):    &  (52) (55) 6583 9797\\
+Dirección electrónica: & lmsanchez@computacion.cs.cinvestav.mx\\
+\end{tabular}
+
+\subsection{Institución}
+\begin{tabular}{ll}
+Nombre:  &          CINVESTAV-IPN\\
+Departamento:    &  Depto. de  Computación\\
+Direcci\'{o}n:   &  Av. Instituto Politécnico Nacional No. 2508\\
+                 &  Col. San Pedro Zacatenco\\
+                 &  CDMX 07300\\
+Teléfono:    & (52) (55) 5747 3758\\
+\end{tabular}
+
+\subsection{Beca de tesis}
+\begin{tabular}{ll}
+Institución otorgante:  & CONACyT\\
+Tipo de beca:      & Doctorado\\
+Vigencia:    & Septiembre 2017 - Agosto 2021\\
+\end{tabular}
+
+\subsection{Datos de la asesora}
+\begin{tabular}{ll}
+Nombre:  & Sonia Guadalupe Mendoza Chapa\\
+Dirección:   &  Av. Instituto Politécnico Nacional No. 2508\\
+                 &  Col. San Pedro Zacatenco\\
+                 &  CDMX 07300\\
+Teléfono (oficina):    & 50613800 ext. 4241\\
+Institución: & CINVESTAV-IPN\\
+Departamento adscripción: & Departamento de Computación\\
+Grado académico: & Doctora en Informática\\
+\end{tabular}
+
+\iffalse
+\subsection{Datos de la coasesora}
+\begin{tabular}{ll}
+Nombre:  & Beatriz Adriana González Beltrán\\
+Dirección:   &  Av. San Pablo 180\\
+                 &  Col. Reynosa-Tamaulipas\\
+                 &  CDMX 02200\\
+Teléfono (oficina):    & 50613800 ext. 4241\\
+Institución: & UAM, unidad Azcapotzalco\\
+Departamento adscripción: & Departamento de Sistemas\\
+Grado académico: & Doctora en Informática\\
+\end{tabular}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Descripción del proyecto}
+
+Esta sección se divide en tres partes. Primero, el contexto de investigación muestra en qué campos de estudio se encuentra inscrito el proyecto de tesis (ver Sección \ref{dp:ci}). Como se propone un método de evaluación de usabilidad en comunidades web, se descompone la propuesta en sus dos pilares fundamentales, las comunidades (ver Sección \ref{dp:co}) y la usabilidad (ver Sección \ref{dp:us}).
+
+\subsection{Contexto de investigación}
+\label{dp:ci}
+
+En la Figura \ref{img:context}, se representa el contexto de investigación del presente trabajo de tesis, el cual está basado en la \textit{ACM Computing Classification System} (CCS) de 2012. A continuación se describe brevemente cada nivel utilizado de la taxonomía:
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \path[mindmap,concept color=violet!60,text=white]
+    node[concept] {Human-centered computing}
+    [clockwise from=30]
+    child[concept color=blue!60]
+    {
+      node[concept] {Human-computer interaction (HCI)}
+      [clockwise from=30]
+      child { node[concept] {HCI design and evaluation methods} }
+      {
+        [clockwise from=-30]
+        child { node[concept] {Usability testing} }
+      }
+    }
+    child[concept color=red!60]
+    {
+      node[concept] {Collaborative and social computing (CSC)}
+      [clockwise from=-30]
+      child { node[concept] {CSC design and\\evaluation methods} }
+      {
+        [clockwise from=60]
+        child { node[concept] {Social network analysis} }
+      }
+    };
+  \end{tikzpicture}
+  \caption{Contexto de investigación del presente proyecto.}
+  \label{img:context}
+\end{figure}
+
+\begin{itemize}
+  \item \textit{\textbf{Human-centered computing:}} la computación centrada en el ser humano estudia el diseño, desarrollo y despliegue de sistemas humano-computadora de iniciativa mixta (la computadora o el humano pueden tomar la iniciativa y decidir qué hacer a continuación). Surge de la convergencia de múltiples disciplinas, que se ocupan tanto de la comprensión de los seres humanos, como del diseño de artefactos computacionales \cite{Jaimes:2007}.
+    \begin{itemize}
+      \item \textit{\textbf{Human-computer interaction (HCI):}} la interacción humano-computadora es la región de estudio donde, por una parte, se cruzan la psicología y las ciencias sociales, y por otra parte, convergen las ciencias de la computación y la tecnología \cite{Carroll:1997}. 
+      \begin{itemize}
+        \item \textit{\textbf{HCI design and evaluation methods:}} el diseño es el logro de objetivos con restricciones; un objetivo es el propósito del diseño que se pretende producir; las restricciones son limitaciones en el proceso de diseño por factores externos. Así, hay que elegir qué metas o restricciones pueden ser relajadas para que otras puedan ser satisfechas \cite{Dix:1997B}.
+
+        La evaluación tiene tres objetivos principales: evaluar la extensión y accesibilidad de la funcionalidad del sistema, evaluar la experiencia de los usuarios e identificar problemas específicos con el sistema \cite{Dix:1997B}.
+        \begin{itemize}
+          \item \textit{\textbf{Usability testing:}} es un proceso que emplea personas, como participantes de pruebas, para evaluar el grado en que un producto cumple con criterios de usabilidad específicos \cite{Rubin:2008}.
+        \end{itemize}
+      \end{itemize}
+  \item \textit{\textbf{Collaborative and social computing (CSC):}} campo de estudio que tiene como objetivo facilitar que las personas compartan, comuniquen, coordinen y colaboren activamente entre ellas, en cualquier lugar y en cualquier momento \cite{Wang:2007}.
+  \begin{itemize}
+        \item \textit{\textbf{CSC design and evaluation methods:}} ver definición de \textit{HCI design and evaluation methods}.
+        \begin{itemize}
+          \item \textit{\textbf{Social network analysis:}} las redes sociales son nodos de individuos, grupos, organizaciones y sistemas relacionados que vinculan uno o más tipos de interdependencias, e.g., valores compartidos, visiones e ideas, entre muchos otros aspectos de las relaciones humanas. El análisis de redes sociales supone que las relaciones son importantes. Corresponde y mide relaciones formales e informales para entender qué facilita o impide los flujos de conocimiento que unen a las unidades que interactúan, i.e., quién conoce a quién, y quién comparte qué información y conocimiento con quién, y por qué medios de comunicación (e.g., datos e información, voz y videoconferencias) \cite{Serrat:2017} (ver Apéndice \ref{apx:sna}).
+        \end{itemize}
+      \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsection{Comunidades}
+\label{dp:co}
+
+Los diseñadores de experiencia del usuario han inventado interfaces de usuario y procesos que apoyan el trabajo, la comunicación y la diversión. Ahora hay una oportunidad de ver hacia el diseño de experiencia de la comunidad, a la participación en los medios sociales y a las estrategias de motivación, para incentivar el crecimiento de las comunidades de manera constructiva. Ejemplos exitosos, como \textit{Wikipedia} o proyectos de ciencia ciudadana (ver Apéndice \ref{apx:csp}) muestran lo que se puede alcanzar. Sin embargo, el resultado global del diseño de la experiencia comunitaria es una respuesta exigua, dado que no existe suficiente participación de sus usuarios, planteando la cuestión de cómo lograr resultados más consistentes y exitosos. Esta variación se en el cambio de énfasis de la teoría de micro-HCI a la de macro-HCI \cite{Shneiderman:2016}.
+
+La Real Academia Española define comunidad como: 
+
+\begin{displayquote}
+``Conjunto de las personas de un pueblo, región o nación. Conjunto de personas vinculadas por características o intereses comunes. Junta o congregación de personas que viven unidas bajo ciertas constituciones y reglas, como los conventos, colegios, etc.''
+\end{displayquote}
+
+Entonces, vale la pena explorar otras definiciones en la literatura, además de hacer la diferencia entre términos muy parecidos que conciernen a otros conjuntos de personas:
+
+\begin{itemize}
+
+\item \textbf{Comunidad}: una comunidad es un grupo social, de cualquier tamaño, que comparte intereses comunes (e.g. un lenguaje o acceso a una red) pero cuyos miembros no necesariamente se tienen que conocer entre sí o interactuar a nivel personal. Las comunidades no comparten un objetivo en común, por lo que la interacción entre los individuos puede ser holgada e imprecisa \cite{Schlichter:1998}.
+
+Según \cite{Mynatt:1997} se trata de una agrupación social multidimensional y cohesiva que incluye, en diversos grados, relaciones espaciales compartidas, convenciones sociales, un sentido de pertenencia y límites, así como un ritmo continuo de interacción social.
+
+\item \textbf{Comunidad en línea}: es cualquier espacio social virtual donde las personas se reúnen para obtener y dar información o apoyo, para aprender o para encontrar compañía. La comunidad puede ser local, nacional, internacional, pequeña o grande \cite{Preece:2001}.
+
+Las comunidades virtuales son agregaciones culturales que surgen cuando hay suficientes personas que coinciden unas con otras, a menudo en el ciberespacio. Una comunidad virtual es un grupo de personas que pueden encontrarse cara a cara o estar distribuidas y que intercambian palabras e ideas, a través de tableros de anuncios y redes de computadoras \cite{Rheingold:1993}.
+
+\item \textbf{Grupo}: se refiere a comunidades cuyos miembros se conocen. Los grupos no necesariamente cooperan, por lo tanto, la interacción es casual porque no hay una tarea compartida o meta común. Ejemplos de grupos son los miembros de un instituto de investigación o un grupo de amigos. En comparación con las comunidades (definidas por Schlichter), la construcción de contactos dentro de los grupos para la cooperación en un proyecto o una tarea es más fácil porque ya hay cierto nivel de conocimiento y comprensión entre los miembros del grupo \cite{Schlichter:1998}.
+
+\item \textbf{Equipo}: la forma más avanzada de una comunidad es un equipo. Los miembros de un equipo se conocen entre sí y cooperan para lograr un objetivo común, compartiendo algunos artefactos en los que están trabajando, e.g., un documento editado conjuntamente \cite{Schlichter:1998}.
+\end{itemize}
+
+Las principales diferencias entre comunidades, grupos y equipos son el nivel de interacción entre sus miembros, así como la existencia de objetivos y artefactos compartidos. Hay que señalar que no existe una separación clara entre ellos. Se producen transiciones, de manera fluida, entre estos conjuntos. Además, pueden existir grupos y equipos dentro de comunidades. La Figura \ref{img:ctg} muestra cómo existen transiciones entre conjuntos (e.g., se puede realizar un grupo de estudio a partir de una conferencia), así como la conformación de unos a partir de otros (e.g., hay varias cátedras en un mismo departamento) \cite{Schlichter:1998}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.54\textwidth]{ctg1.png}
+\end{center}
+\caption{Diferentes puntos de vista de comunidades, grupos y equipos en un sistema educativo. Los conjuntos pueden cambiar o encontrarse unos dentro de otros \cite{Schlichter:1998}.}
+\label{img:ctg}
+\end{figure}
+
+La palabra ``comunidad'' no describe sólo a las personas que viven en la misma zona geográfica. Dado que Internet se ha convertido en parte de la vida cotidiana en todo el mundo y las redes sociales han cobrado gran notoriedad, las definiciones de ``comunidad'' han seguido cambiando y evolucionando. Ahora, hay servicios y negocios que involucran a estas nuevas comunidades, usando la tecnología digital para redefinir la relación entre la economía y la participación comunitaria. A menudo agrupados bajo la categoría de ``economía compartida'', ``diseño de servicios'' o ``red \textit{peer-to-peer}'', los factores que se unen para definir la naturaleza centrada en la comunidad son nebulosos y carecen de indicadores claros o condiciones. En cambio, tiene sentido dar a conocer los principios que guían el diseño de sus productos, principios que pueden definir a las comunidades en línea \cite{Wallace:2014}.
+
+\subsection{Usabilidad}
+\label{dp:us}
+
+De acuerdo al estándar ISO/DIS 9241-11.2, en la parte 11 ``Usabilidad: definiciones y conceptos'', la \textbf{usabilidad} hace referencia a la eficacia, la eficiencia y la satisfacción con las que los usuarios logran objetivos específicos en entornos particulares:
+
+\begin{itemize}
+\item \textbf{Eficacia}: se refiere a la exactitud y la integridad con la que los usuarios pueden alcanzar objetivos específicos en ambientes particulares.
+\item \textbf{Eficiencia}: se relaciona con los recursos gastados (e.g., tiempo y dinero) en relación con la exactitud e integridad de los objetivos alcanzados.
+\item \textbf{Satisfacción}: concierne la comodidad y aceptabilidad del sistema para sus usuarios y otras personas afectadas por su uso.
+\end{itemize}
+
+La usabilidad radica en la interacción del usuario con el producto o sistema y sólo puede medirse con precisión evaluando el rendimiento, la satisfacción y la aceptabilidad del usuario. Cualquier cambio en las características del producto o sistema, usuario, tarea o entorno puede producir un cambio en la usabilidad. Un producto no es intrínsecamente usable o no usable, pero tiene atributos que determinarán la usabilidad para un usuario, tarea y entorno en particular. Estos atributos incluyen no sólo las características específicamente ergonómicas, sino todas las características del producto que afectan al uso, incluidos aquellos aspectos de la calidad del software (como la eficiencia y la fiabilidad) que afectan a la facilidad de uso. Para un producto de software, la usabilidad es la visión del usuario sobre la calidad del software \cite{Bevan:1991}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section{Planteamiento del problema}
+
+Los usuarios veteranos de Internet a menudo se sorprenden por el entusiasmo generado por las aplicaciones de chat, tableros de anuncios y servidores de listas porque este software ha existido por más de veinte años y, aunque ahora está basado en la web, ha cambiado relativamente poco. Pero la siguiente reseña de números de usuarios indica el éxito de este software en el mercado. Los proveedores de Internet \textit{America Online} (AOL), por ejemplo, construyeron una base de clientes exitosa de más de 29 millones de personas, al comprender su necesidad de conectarse. Muchos clientes de AOL se han registrado para obtener su servicio de correo electrónico. \textit{Microsoft Network} soporta 230 millones de usuarios únicos cada mes y cientos de miles de comunidades de \textit{MSN}. Hay más de 104 millones de usuarios de \textit{ICQ} y 91,500 grupos de \textit{UseNet}. IBM organizó un foro en línea en el que 50,000 empleados, en todo el mundo, se conectaron para proponer y discutir nuevas iniciativas \cite{Preece:2001}.
+
+El entusiasmo no se trata de la tecnología utilizada, sino de la gran cantidad de personas que ahora tienen acceso a ella y lo que están haciendo con ella. Personas de todas las edades están en línea, comunidades en gran número, para hablar con amigos, familiares, colegas, personas que viven cerca o lejos, algunos de los cuales nunca verán, ni conocerán o siquiera tendrán contacto nuevamente. Las personas se unen a grupos de discusión para expresar sus emociones, debatir temas, discutir un libro o los últimos acontecimientos en una comedia de situación. La sed de conexiones de comunicación es insaciable, por eso se forman miles de nuevas comunidades cada día \cite{Preece:2001}.
+
+Como se puede inferir, el éxito de una comunidad en línea se puede ver reflejado en diversos aspectos, pero uno muy importante es la participación de sus usuarios. La experiencia de comunidad debe enfocarse en facilitar que los usuarios puedan contribuir a la comunidad, i.e., participar con contenidos y comentarios para incitar al debate. Tal intercambio de información, entre los miembros de una comunidad, se puede ver frenado no solamente por las diferencias culturales de los mismos, sino también por problemas de usabilidad inherentes a los mecanismos de interacción brindados por el sistema en que la comunidad está basada \cite{Gutwin:2000}.
+
+En el estado del arte existen múltiples métodos y herramientas para la evaluación de la usabilidad. Cada aspecto a evaluar depende del enfoque del método y de lo que este intenta medir. La mayoría de los métodos no están orientados a comunidades; aquellos que sí lo están, carecen de implementación o de detalles suficientes para llevarlos a la práctica.
+
+De lo anterior, se formula la hipótesis de investigación:
+
+\begin{displayquote}
+las comunidades web exitosas son aquellas con mayor cooperación de sus usuarios, la cual es incentivada gracias a que los elementos de interacción del sitio web son usables, i.e., permiten y alientan la participación.
+\end{displayquote}
+
+Se eligió estudiar las comunidades web debido a que, por lo general, contienen elementos de interacción (e.g., hilos de mensajes o difusión de información en forma de texto) comunes, a comparación de otras comunidades que tienen también a Internet como infraestructura (e.g., video juegos y mensajería instantánea).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section{Objetivos generales y específicos del proyecto}
+\textbf{General}
+\medskip
+\\
+%Desarrollar un método de evaluación de usabilidad orientado a comunidades web existentes y para ayudar al diseño de nuevas comunidades web.
+Desarrollar un método de evaluación de usabilidad, orientado a comunidades web, que sirva como una herramienta para apoyar el diseño de nuevas comunidades y el rediseño de las ya exitentes. La usabilidad será la métrica para medir el éxito de una comunidad web.
+
+\bigskip
+
+\textbf{Particulares}
+\begin{itemize}
+\item Identificar, en el estado del arte, las características deseables de un método de evaluación, para sentar las bases de nuestra propuesta.
+\item Determinar características generales de las comunidades web y de sus usuarios para establecer su contexto de uso.
+\item Definir métricas de usabilidad en una comunidad web que permitan desarrollar el método de evaluación.
+\item Aplicar el método de evaluación a una comunidad web diferente por cada iteración de la metodología, para obtener resultados cuantitativos y cualitativos que permitan mejorarlo.
+\item Validar mediante análisis comparativo entre los resultados obtenidos del método de evaluación desarrollado y pruebas similares en el estado del arte.
+\item Crear una herramienta web basada en el método propuesto para agilizar el proceso de evaluación y entregar resultados en forma gráfica.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Metodología}
+
+Se seguirá el proceso de diseño centrado en el usuario, de acuerdo al estándar ISO 9241-210:2010 en la parte 210 ``Diseño centrado en el ser humano para sistemas interactivos''. La Figura \ref{metho} muestra la naturaleza iterativa de la metodología:
+
+\begin{figure}[h]
+\centering
+\tikzset{every shadow/.style={fill=none,shadow xshift=0pt,shadow yshift=0pt}}
+\tikzset{module/.append style={top color=\col,bottom color=\col}}
+\smartdiagramset{text width=3cm, module minimum height=1.5cm, module minimum width=3cm, border color=none, set color list={orange!40, green!40!lime!60, magenta!40, blue!10!cyan},
+  uniform connection color=true
+}
+\smartdiagram[circular diagram:clockwise]{Contexto de uso, Requisitos, Soluciones de diseño, Evaluar diseños}
+\caption{Proceso de diseño centrado en el usuario.}
+\label{metho}
+\end{figure}
+
+\begin{itemize}
+\item \textbf{Especificar el contexto de uso:} denota la identificación de la comunidad web a analizar, así como de las personas que la usarán, para qué la emplearán y en qué condiciones la usarán.
+
+%Para ello, se podrá recurrir a herramientas como entrevistas contextuales e individuales, así como al diseño de ``personas''.
+
+Para realizar una prueba de usabilidad, se tiene que comenzar identificando al público objetivo, el cual consistirá en uno o más grupos de usuarios. Por ejemplo, un solo sitio web puede tener contenido para los consumidores y un área de inicio de sesión independiente para los administradores. Es probable que estos dos grupos de usuarios realicen diferentes tareas como parte de su uso normal del sitio web. Cada grupo de usuarios debe recibir tareas a realizar durante las pruebas, que reflejen sus diferentes patrones de uso \cite{web:001}.
+
+Siguiendo los criterios de \cite{web:002} es necesario identificar en este apartado:
+\begin{itemize}
+\item \textbf{Alcance:} consiste en indicar lo que se está probando, e.g., el nombre del sitio web, la aplicación web u otro producto. También es necesario especificar cuánto del producto cubrirá la prueba (e.g., el prototipo a partir de una fecha específica o la navegación y el contenido).
+
+\item \textbf{Propósito:} requiere identificar las preocupaciones, preguntas y metas para esta prueba. Estas pueden ser bastante amplias; e.g., ``¿Pueden los usuarios navegar hacia información importante desde la página de inicio del prototipo?'' O bien, pueden ser bastante específicas; e.g., ``¿Los usuarios encontrarán fácilmente el cuadro de búsqueda en su ubicación actual?'' En cada ronda de pruebas, es probable que se tenga varias preocupaciones generales y específicas sobre las que enfocarse. Dichas preocupaciones deben conducir los escenarios que se elija para la prueba de usabilidad.
+
+\item \textbf{Participantes:} precisa indicar el número y tipo de participantes que se someterán a la prueba. Asimismo, es importante describir cómo estos participantes fueron o serán reclutados y considerar incluir al evaluador como parte de la descripción.
+\end{itemize}
+
+\item \textbf{Especificar requisitos:} se relaciona con identificar las metas de usuario que deben cumplirse para que una evaluación tenga éxito.
+
+Seleccionar las tareas más importantes y los grupos de usuarios que se van a probar. La tarea se puede elegir en función de las características disponibles para las pruebas, la frecuencia de uso, la criticidad y otros factores. Producir escenarios de tareas y datos de entrada,  también instrucciones para el usuario (decir al usuario lo que debe lograr, no cómo hacerlo). Crear tareas básicas que se pueden personalizar para cada participante o permitir a los participantes seleccionar sus propias tareas \cite{web:003}.
+
+Según \cite{web:002} para esta sección se especifica lo siguiente:
+
+\begin{itemize}
+\item \textbf{Escenarios:} indicar el número y tipos de tareas incluidas en las pruebas. Para una sesión de aproximadamente 60 minutos, se deberían formular 10 (+/- 2) escenarios en pruebas de escritorio u 8 (+/- 2) escenarios para una prueba para dispositivos móviles. Es posible que se desee incluir más escenarios en el plan de pruebas para que el equipo pueda elegir las tareas apropiadas.
+
+\item \textbf{Horario y ubicación:} es necesario indicar cuándo y dónde se realizarán las pruebas. Para un programa establecido, hay que especificar cuántas sesiones se van a celebrar en un día y exactamente a qué hora.
+
+\item \textbf{Equipo:} hay que indicar el tipo de equipo que se utilizará en la prueba; e.g., computadora de escritorio, computadora portátil, \textit{smartphone}. Si es pertinente, se incluye información sobre el tamaño y resolución del monitor, el sistema operativo, el navegador, etc. También es conveniente indicar si se está planeando grabar audio/video en las sesiones de prueba o usar cualquier herramienta especial de prueba de usabilidad y/o herramientas de accesibilidad (e.g., equipo de \textit{eye tracking}).
+
+\item \textbf{Roles:} incluir una lista del personal que participará en las pruebas de usabilidad y el papel que desempeñará cada uno. El especialista en usabilidad debe ser el facilitador de las sesiones. El equipo de usabilidad también puede proporcionar el tomador de notas principal. Se espera que otros miembros del equipo participen como observadores y, quizás, como tomadores de notas.
+\end{itemize}
+
+\item \textbf{Crear soluciones de diseño:} se refiere a diseñar y aplicar un método de evaluación.
+
+Según \cite{Rohrer:2014} no es realista usar todo el universo de métodos de evaluación en un proyecto dado, pues casi todos los proyectos se beneficiarían de múltiples métodos de investigación y de la combinación de ideas. Desafortunadamente, muchos equipos de diseño sólo utilizan uno o dos métodos con los que están familiarizados. La pregunta clave es ``¿Qué hacer cuando...?'' Para entender mejor cuándo usar qué método, Rohrer propone considerar lo siguiente:
+
+\begin{itemize}
+\item \textbf{Actitud \textit{vs} Comportamiento:} esta distinción puede resumirse contrastando ``lo que la gente dice'' contra ``lo que la gente hace'' (muy a menudo los dos son muy diferentes). El propósito de la investigación de actitud suele ser entender o medir las creencias declaradas de las personas, mientras que las investigaciones de comportamiento se basan en observar las acciones de las personas.
+
+\item \textbf{Cualitativo \textit{vs} Cuantitativo:} la distinción aquí es importante y va mucho más allá de la visión estrecha de lo cualitativo como ``abierto'', como en una pregunta de encuesta abierta. En cambio, los estudios de naturaleza cualitativa generan datos sobre comportamientos o actitudes basados en su observación directa, mientras que en estudios cuantitativos los datos sobre el comportamiento o las actitudes en cuestión se recogen indirectamente, a través de una medición o un instrumento como una encuesta. En estudios de campo y estudios de usabilidad, e.g., el investigador observa directamente cómo las personas usan la tecnología (o no) para satisfacer sus necesidades. Esto da a los investigadores la capacidad de hacer preguntas, investigar el comportamiento o incluso ajustar el protocolo del estudio para cumplir mejor sus objetivos. El análisis de los datos no suele ser matemático.
+
+Por el contrario, las ideas en los métodos cuantitativos se derivan típicamente del análisis matemático, ya que el instrumento de recolección de datos (e.g., una encuesta o el registro de un servidor web) captura grandes cantidades de datos que se codifican fácilmente de manera numérica.
+
+Debido a la naturaleza de sus diferencias, los métodos cualitativos son mucho más adecuados para responder preguntas sobre ``por qué'' o ``cómo'' solucionar un problema, mientras que los métodos cuantitativos hacen un trabajo mucho mejor respondiendo ``cuántos'' y ``cuántos tipos''. Tener tales números ayuda a priorizar los recursos, e.g. para centrarse en los temas con mayor impacto.
+\end{itemize}
+
+Por otra parte, de acuerdo a \cite{web:002} para los aspectos cualitativos y cuantitativos hay que considerar lo que sigue:
+\begin{itemize}
+\item \textbf{Métricas subjetivas:} incluir las preguntas que se va a hacer a los participantes antes de las sesiones (e.g., un cuestionario de fondo), después de completar cada escenario de la tarea (e.g., preguntas de facilidad y satisfacción sobre la tarea) así como de la facilidad general, satisfacción y probabilidad de utilizar/recomendar preguntas cuando la sesión se hayan completado.
+
+\item \textbf{Métricas cuantitativas:} indicar los datos cuantitativos que va a medir la prueba (e.g., tasas de cumplimiento exitosas, tasas de error y tiempo en la tarea).
+\end{itemize}
+
+\cite{web:002} también indica que hay varias métricas que pueden recopilarse durante el curso de las pruebas:
+
+\begin{itemize}
+\item \textbf{Finalización exitosa de tareas:} cada escenario requiere que el participante obtenga datos específicos que se utilizarían en una tarea típica. El escenario se completa correctamente cuando el participante indica que ha encontrado la respuesta o ha completado la meta de la tarea. En algunos casos, es deseable dar a los participantes preguntas de opción múltiple. Incluir las preguntas y respuestas en el plan de prueba y proporcionarlas a los tomadores de notas y observadores.
+
+\item \textbf{Errores críticos:} son desviaciones a la terminación de los objetivos del escenario. Esencialmente, el participante no podrá terminar la tarea. El participante puede o no ser consciente de que la meta de la tarea es incorrecta o incompleta.
+
+\item \textbf{Errores no críticos:} son errores que son responsabilidad del participante y no impiden la capacidad del participante para completar con éxito la tarea. Estos errores hacen que la tarea se complete de manera menos eficiente, e.g., los comportamientos exploratorios tales como abrir el elemento de menú de navegación incorrecto o usar un control incorrectamente son errores no críticos.
+
+\item \textbf{Frecuencia sin errores:} es el porcentaje de participantes que completan la tarea sin errores (errores críticos o no críticos).
+
+\item \textbf{Tiempo en tarea:} es la cantidad de tiempo que tarda el participante en completar la tarea.
+
+\item \textbf{Medidas subjetivas:} estas evaluaciones son calificaciones auto-reportadas por los participantes de satisfacción, facilidad de uso, facilidad de encontrar información, etc. Se pueden utilizar encuestas de Likert.
+
+\item \textbf{Le gusta, no le gusta y recomienda:} los participantes ofrecen lo que más les gusta y lo que menos les gusta, así como las recomendaciones para mejorar la aplicación que evaluaron.
+\end{itemize}
+
+\item \textbf{Evaluar diseños:} considera discusión y análisis de resultados.
+
+Para informar los resultados de una prueba de usabilidad, \cite{web:002} recomienda centrarse principalmente en los hallazgos y en las recomendaciones que se diferencian por niveles de gravedad. Hay que incluir la información pertinente del plan de prueba y presentar sólo el detalle suficiente para que el método sea identificable. Mantener las secciones cortas, usar tablas para mostrar las métricas y usar ejemplos visuales para demostrar áreas problemáticas, cuando sea posible. Al final de las pruebas de usabilidad, se habrán recopilado varios tipos de datos, dependiendo de las métricas que se hayan identificado en el plan de pruebas. Al analizar los datos que se han recopilado, hay que leer las notas cuidadosamente buscando patrones y asegurarse de agregar una descripción de cada uno de los problemas. Buscar tendencias y mantener un recuento de los problemas que ocurrieron entre los participantes.
+
+Dependiendo del tipo de datos que se recolectó, \cite{web:002} ofrece un resumen de lo que hay que analizar:
+
+\begin{itemize}
+\item \textbf{Datos cuantitativos:} introducir los datos en una hoja de cálculo para registrarlos o realizar cálculos tales como: tasas de éxito, tiempos de las tareas, tasas de error o respuestas a los cuestionarios de satisfacción.
+
+Es posible que se desee agregar datos demográficos del participante para poder clasificarlos por ese medio y ver si alguno de los resultados difiere según las variables demográficas.
+
+Hay que asegurarse de identificar los escenarios de tareas para cada una de las métricas.
+\item \textbf{Datos cualitativos:} observaciones sobre las vías tomadas por los participantes, problemas experimentados, comentarios/recomendaciones, respuestas a preguntas abiertas.
+
+Asegurarse de que las declaraciones de problemas son exactas y concisas, e.g., una buena declaración es ``hizo clic en el enlace a la investigación, en lugar de ensayos clínicos''; declaraciones deficientes son ``hizo clic en el vínculo equivocado'' o ``estaba confundido acerca de los enlaces''.
+\end{itemize}
+
+\end{itemize}
+
+En cada iteración del proceso se elegirá una comunidad web en específico para analizar.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Cronograma}
+
+El plan de trabajo está presentado en el Cuadro \ref{tbl:crono}.
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+ & \multicolumn{3}{c|}{Primer año} & \multicolumn{3}{c|}{Segundo año} & \multicolumn{3}{c|}{Tercer año} & \multicolumn{3}{c|}{Cuarto año} \\ \hline
+ & S-D & E-A & M-A & S-D & E-A & M-A & S-D & E-A & M-A & S-D & E-A & M-A \\ \hline
+Seminario I & x &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+Estudio del estado del arte & x & x & x & x & x & x & x & x & x & x & x &  \\ \hline
+Escritura de artículo &  &  & x &  &  &  &  &  &  &  &  &  \\ \hline
+Curso & x &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+%Curso 2 &  & x &  &  &  &  &  &  &  &  &  &  \\ \hline
+%Curso 3 &  &  & x &  &  &  &  &  &  &  &  &  \\ \hline
+%Curso 4 &  &  &  & x &  &  &  &  &  &  &  &  \\ \hline
+Seminario II &  &  &  & x &  &  &  &  &  &  &  &  \\ \hline
+Evaluar comunidad 1 &  &  &  & x & x &  &  &  &  &  &  &  \\ \hline
+Escritura de artículo &  &  &  &  & x & x &  &  &  &  &  &  \\ \hline
+Seminario III &  &  &  &  &  &  & x &  &  &  &  &  \\ \hline
+Evaluar comunidad 2 &  &  &  &  &  & x &  &  &  &  &  &  \\ \hline
+Escritura de artículo &  &  &  &  &  & x & x &  &  &  &  &  \\ \hline
+Predoctoral &  &  &  &  &  &  & x & x &  &  &  &  \\ \hline
+Seminario IV &  &  &  &  &  &  &  &  &  & x &  &  \\ \hline
+Evaluar comunidad 3 &  &  &  &  &  &  &  & x &  &  &  &  \\ \hline
+Escritura de artículo &  &  &  &  &  &  &  & x & x &  &  &  \\ \hline
+Desarrollo de herramienta &  &  &  &  &  &  &  &  & x & x &  &  \\ \hline
+\begin{tabular}[c]{@{}l@{}}Escritura de artículo \end{tabular} &  &  &  &  &  &  &  &  &  & x & x &  \\ \hline
+Escritura de tesis &  & x & x & x & x & x & x & x & x & x & x &  \\ \hline
+Revisión de tesis &  &  &  &  &  &  &  &  &  & x & x &  \\ \hline
+Correcciones &  &  &  &  &  &  &  &  &  &  & x & x \\ \hline
+Examen de grado &  &  &  &  &  &  &  &  &  &  &  & x \\ \hline
+\end{tabular}%
+}
+\caption{Cronograma de actividades.}
+\label{tbl:crono}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Infraestructura}
+
+La infraestructura mínima necesaria para el desarrollo del proyecto de tesis es:
+
+\bigskip
+
+\emph{Hardware}:
+\begin{itemize}
+\item Una PC con conexión a Internet.
+\end{itemize}
+\hspace{5mm}
+\emph{Software}:
+\begin{itemize}
+\item Para la creación de la herramienta web, se utilizará HTML, CSS y JavaScript.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Estado del arte}
+
+Esta sección describe la información necesaria para comprender de manera general el proyecto de tesis. En el marco teórico (ver Sección \ref{ea:mt}) se describen conceptos importantes. Los trabajos relacionados (ver Sección \ref{rw}) son una muestra de lo que se ha publicado. Finalmente, en el análisis comparativo (ver Sección \ref{rw:cc}) se discute cómo los trabajos relacionados no han satisfecho la hipótesis de investigación propuesta.
+
+\subsection{Marco teórico}
+\label{ea:mt}
+
+A continuación se describen los conceptos clave que conforman el lenguaje común para la comprensión del trabajo de tesis.
+
+\subsubsection{Paradigmas de diseño centrados en el usuario final}
+
+Ya sea que se defina usuario final como individuo o como conjunto, cuando las opiniones de estos afectan el diseño de un sistema, se habla de un paradigma de diseño centrado al usuario final.
+
+\paragraph{Diseño centrado en el usuario:}el diseño centrado en el usuario (UCD\footnote{Del inglés \textit{User-Centered Design}}) es un término amplio que describe los procesos de diseño en los que los usuarios finales influyen en cómo se desarrolla un proyecto. Es a la vez una filosofía amplia y una variedad de métodos. Hay un espectro de formas en que los usuarios están involucrados en UCD, pero el concepto importante es que los usuarios están involucrados de una manera u otra. Por ejemplo, algunos tipos de UCD consultan a los usuarios sobre sus necesidades y los involucran en momentos específicos durante el proceso de diseño; típicamente durante la recolección de requisitos y pruebas de usabilidad. En el extremo opuesto del espectro, existen métodos UCD en los que los usuarios tienen un profundo impacto en el diseño al participar, como socios, con los diseñadores durante todo el proceso de diseño \cite{Abras:2004}.
+
+\paragraph{Diseño centrado en la comunidad:}el diseño centrado en la comunidad (CCD\footnote{Del inglés \textit{Community-Centered Design}}) hace hincapié en la comprensión de las conductas y necesidades sociales para después colaborar con las comunidades sociales más activas en la concepción de soluciones, adoptando un enfoque inductivo \cite{Ogilvy:2002}.
+
+El CCD es particularmente benéfico cuando los problemas (e.g., hostilidades) de una comunidad en línea (e.g., de salud y apoyo a pacientes, de educación, de comercio electrónico o de asociaciones civiles) permean a la sociedad en el mundo real. También es benéfico para las comunidades en línea, donde tener una gran proporción de miembros contribuyentes es crucial para proporcionar los servicios necesarios y satisfacer las expectativas de los miembros de la comunidad \cite{DelValle:2009}.
+
+Las cuatro directrices clave en el proceso de CCD son: 1) evaluar las necesidades de la comunidad antes de decidir sobre la tecnología; 2) diseñar la usabilidad en la comunidad; 3) planificar la sociabilidad de la comunidad; y 4) revaluar las necesidades de la comunidad \cite{Alem:2005}.
+
+Al diseñar para las comunidades en línea, ha quedado claro que es necesario un conjunto de técnicas que complementen, no reemplacen, los métodos tradicionales de UCD y que vayan más allá de una sola mente que interactúe con una tecnología aislada en un vacío social, cultural e histórico \cite{DePaula:2003}.
+
+\subsubsection{Taxonomía de usuarios en comunidades virtuales}
+
+Dado que las comunidades están conformadas por múltiples usuarios, es importante caracterizarlos y clasificarlos.
+
+\paragraph{Usuario lector:}en casi todas las comunidades en línea, la mayoría de los usuarios no contribuyen, la mayoría de ellos son lectores, i.e., que sólo leen y observan el contenido \cite{Lanamaki:2017}.
+
+Cuando los usuarios visitan o se unen a una comunidad en línea, están interesados en el contenido disponible en el sitio. Aunque muchos satisfacen su necesidad de visitar el sitio y probablemente no volverán, algunos regresarán y seguirán consumiendo el contenido que encuentran útil o interesante. Estos usuarios están motivados por las necesidades de información y, hasta cierto punto, por el aspecto entretenido del contenido, pero no tienden a interactuar con otros usuarios. Sin embargo, pueden comenzar a desarrollar un sentido de pertenencia, a medida que adquieren la capacidad de reconocer y discriminar las características del contenido que consumen con el tiempo \cite{Velasquez:2014}.
+
+Por lo general, los nuevos usuarios empiezan haciendo cosas sencillas: pueden editar una palabra escrita incorrectamente o estar de acuerdo con el comentario de otra persona; no hay que pedirles mucho esfuerzo o requerirles que se expongan \cite{Preece:2009}.
+
+\paragraph{Usuario contribuidor:}una contribución es un acto individual que se suma a un esfuerzo comunitario más amplio, e.g., agregar una imagen o un comentario a un sitio web, cuando no existe la intención de colaborar, comunicarse o formar una relación. Los contribuidores a menudo comienzan haciendo una corrección en un \textit{wiki}, etiquetando una fotografía o clasificando una película \cite{Preece:2009}.
+
+Los contribuidores se caracterizan por motivaciones de interés propio. Estos usuarios están interesados en la visibilidad de su contribución y en el reconocimiento de su cantidad y calidad. Estos usuarios participan primero a través de tareas simples y más tarde con contribuciones más exigentes, agregan su esfuerzo a otros dentro de la comunidad en línea. Sin embargo, no colaboran, tampoco interactúan ni forman relaciones interpersonales con otros usuarios. Sus motivaciones están más enfocadas hacia la construcción de una imagen y la obtención de un estatus que les permita ser notados y reconocidos por otros usuarios, en lugar de trabajar conjuntamente con otros para ayudar a construir la comunidad en línea \cite{Velasquez:2014}.
+
+\paragraph{Usuario colaborador:}mientras que los contribuidores no interactúan con otros usuarios, los colaboradores se conectan e interactúan. Para este tipo de usuarios, el sentido de pertenencia y la identidad compartida se convierten en una motivación importante para trabajar junto con otros usuarios. En esta etapa, las motivaciones sociales son esenciales. Los colaboradores buscan el contacto con otros miembros y cooperan para crear nuevos contenidos o para compartir información relevante. El deseo de compartir intereses con otros usuarios, así como la construcción de una comunidad, mueven a estos usuarios hacia la colaboración, el intercambio y la interacción con otros hasta el punto de desarrollar relaciones personales.
+Sin embargo, hay un cambio constante de rol entre los usuarios, de contribuidores a colaboradores y viceversa. Estos cambios de roles permiten la aparición de relaciones sociales similares a las de cualquier grupo social fuera de línea \cite{Velasquez:2014}.
+
+Revisar los medios sociales, varias veces, es un paso importante para convertirse en un contribuidor comprometido, regular y posiblemente un colaborador. La colaboración implica que dos o más colaboradores discutan, cooperen y trabajen juntos para crear algo o compartir información \cite{Denning:2008}.
+
+Un elemento esencial en este proceso es el desarrollo de un trasfondo común, i.e., la comprensión mutua, creencias compartidas y suposiciones. El trasfondo común facilita la comunicación y la colaboración, mientras los colaboradores trabajan juntos para desarrollar un artículo de \textit{Wikipedia} o para discutir un problema médico en una comunidad de apoyo al paciente en línea. Una estrecha coordinación en las primeras etapas de un proyecto es especialmente importante para sentar las bases de un resultado exitoso \cite{Convertino:2008} \cite{Suh:2008}.
+
+\paragraph{Usuario líder:}si bien las contribuciones individuales y las colaborativas son los aspectos más visibles de la participación en los medios sociales, todo sistema social debe tener alguna forma de establecer normas comunitarias y políticas explícitas para sobrevivir \cite{Butler:2008}\cite{Burke:2008}.
+
+Muy pocos usuarios avanzan y se convierten en líderes, que es la última etapa en el modelo de socialización del usuario. Líderes son aquellos usuarios que asumen la responsabilidad voluntaria de definir y hacer cumplir las normas y políticas comunitarias y definir metas a largo plazo. Buscan el respeto y la admiración de otros usuarios. Para los líderes, aspectos como la credibilidad, apoyados por una identidad en línea consistente y coherente, que por lo general coincide con su identidad fuera de línea, juega un papel central, ya que están motivados por un interés en conseguir puestos de poder, honor y respeto en el sitio. Estos usuarios son responsables de buscar soluciones a cualquier problema que pueda surgir en la comunidad, con respecto a otros usuarios o contenido. Los líderes ayudan a construir la identidad de la comunidad y pueden ayudar a mejorar la experiencia de los recién llegados \cite{Velasquez:2014}.
+
+Algunas características comunes de los líderes en línea son que suelen contribuir con el mayor número de comentarios y son los más activos \cite{Yoo:2004} \cite{Bodendorf:2009} \cite{Ortega:2008}.
+
+El liderazgo es una vocación más elevada a la que aspira sólo una pequeña fracción de lectores, contribuidores y colaboradores. Los líderes pueden estar motivados para mejorar la comunidad, para prevenir abusos o para orientar a los recién llegados. Los líderes suelen ser capaces de sintetizar y comunicar ideas, de manera más eficiente y eficaz que otros. Usualmente disfrutan del desafío y la oportunidad de dirigir a otros, y, a cambio, buscan poder, honor o respeto. Ellos quieren contribuir a algo significativo que va más allá de su ganancia personal \cite{Preece:2009}.
+
+\subsubsection{Métricas de éxito de una comunidad}
+
+Una medida de éxito puede ser la obtención de una masa crítica de usuarios. Los costos de uso de un sistema multi-usuario son, a menudo, independientes del número de usuarios. En contraste, el beneficio aumenta con el número de usuarios. Si el sistema cuenta solamente con un usuario, entonces no se espera mucho beneficio. Por lo tanto, si hay un número pequeño de usuarios, el costo para cada uno probablemente exceda el beneficio; sólo cuando hay un gran número de usuarios el beneficio supera el costo. El punto de cruce se denomina masa crítica. Debajo de la masa crítica de usuarios, el costo supera el beneficio y, por lo tanto, cualquier usuario razonable abandonará el sistema, reduciendo aún más el número de usuarios. Por encima de la masa crítica, el beneficio supera el costo y, por lo tanto, los usuarios se quedarán con él y otros se unirán. El desafío es llegar a esa posición de masa crítica \cite{Dix:1997}. Dix realizó el análisis anterior para estudiar la viabilidad de la Web como infraestructura para el trabajo colaborativo.
+
+Por otra parte, un gerente de un sitio de comercio electrónico juzgará el éxito de una comunidad en línea en términos de cuántas personas se sienten atraídas por el sitio, cuánto tiempo permanecen, cuántas veces regresan y, en última instancia, cuánto gastan en bienes o servicios. Un maestro juzgará el éxito de una comunidad de aprendizaje por lo bien que los estudiantes realizan su trabajo, la calidad de sus proyectos y lo que los estudiantes dicen sobre su comunidad de aprendizaje. Las personas enfermas o infelices juzgarán a una comunidad de apoyo por la ayuda y la empatía que reciben de los demás y la información que obtengan para lidiar con su situación.
+
+También existe una cuestión de cuáles son las medidas más convincentes. Un gerente de negocios preferirá medidas objetivas que comparen, por ejemplo, las ventas antes y después de que la comunidad en línea fuese agregada al sitio. Los clientes, sin embargo, pueden encontrar las calificaciones subjetivas de otros clientes y anécdotas más convincentes \cite{Preece:2001}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Trabajos relacionados}
+\label{rw}
+
+A continuación, se describen brevemente algunos trabajos relevantes relacionados con métodos de evaluación de usabilidad y diseño centrado en la comunidad.
+
+\subsubsection{AttrakDiff}
+\label{rw:ad}
+
+AttrakDiff facilita la evaluación anónima de un producto escogido por clientes, usuarios, etc. Los datos de evaluación permiten determinar cómo se experimenta el atractivo del producto, en términos de usabilidad y apariencia, y si la optimización es necesaria. AttrakDiff puede utilizarse para todos los productos interactivos, desde software empresarial hasta productos de consumo, controles de máquinas, sitios web o dispositivos médicos. El cuestionario en línea está disponible en alemán e inglés \cite{Hassenzahl:2003}.
+
+Las evaluaciones de AttrakDiff distinguen entre calidad pragmática y calidad hedónica. Los factores pragmáticos son, por ejemplo, utilidad y usabilidad. Los factores hedónicos incluyen las necesidades emocionales, como la curiosidad y la identificación. El atractivo resultante se basa en la combinación de factores pragmáticos y hedónicos (ver Figura \ref{img:attrk}).
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{attrak.png}
+\end{center}
+\caption{El modelo de trabajo teórico ilustra cómo las cualidades pragmáticas y hedónicas influyen en la percepción subjetiva del atractivo, que da lugar a comportamientos y emociones consecuentes.}
+\label{img:attrk}
+\end{figure}
+
+La facilidad de uso, i.e., una operatividad óptima, es una necesidad para los productos interactivos. Cada vez más, los productos se destacan por su experiencia de usuario. En estos días, es necesario aplicar un método de evaluación que registre la calidad pragmática percibida, la calidad hedónica y el atractivo de un producto interactivo \cite{Hassenzahl:2015}.
+
+El modelo separa los cuatro aspectos esenciales:
+
+\begin{itemize}
+\item La calidad del producto deseado por el diseñador.
+\item La percepción y evaluación subjetivas de la calidad.
+\item Las cualidades pragmáticas y hedónicas independientes.
+\item Las consecuencias conductuales y emocionales.
+\end{itemize}
+
+Para medir el atractivo, se aplica un instrumento con formato de diferenciales semánticos. Consiste en 28 elementos de siete pasos, cuyos polos son adjetivos opuestos (e.g., ``confuso - claro'', ``inusual - ordinario'', ``bueno - malo''). Cada conjunto de elementos adjetivos se ordena en una escala de intensidad \cite{Hassenzahl:2003}.
+
+Cada uno de los valores medios de un grupo de artículos crea un valor de escala para la calidad pragmática, la calidad hedónica y el atractivo.
+
+La herramienta permite realizar una sola evaluación, una comparativa de dos evaluaciones, así como una comparativa de antes y después. La Figura \ref{img:attrk2} muestra el resultado de la evaluación de un software prototipo ``P'' evaluado por futuros usuarios. El prototipo se clasificó bien tanto en calidad hedónica como pragmática.
+
+El rectángulo de confianza muestra que, según el consenso de los usuarios, la calidad hedónica es mayor que la calidad pragmática. Para el prototipo ``P'', el rectángulo de confianza se extiende desde el área deseada (\textit{desired}) hacia el área auto-orientada (\textit{too self-oriented}). Por lo tanto, no puede clasificarse claramente como deseable \cite{Hassenzahl:2003}.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{attrak2.png}
+\end{center}
+\caption{Resultado de evaluación en AttrakDiff para un prototipo ``P''.}
+\label{img:attrk2}
+\end{figure}
+
+\subsubsection{Marco conceptual para la evaluación de trabajo colaborativo}
+\label{rw:gf}
+
+\cite{Gutwin:2000} presentan un marco conceptual que articula las mecánicas de colaboración para trabajo colaborativo: las acciones de bajo nivel y las interacciones que deben llevarse a cabo para completar una tarea, de una manera conjunta. Estas mecánicas incluyen comunicación, coordinación, planificación, supervisión, asistencia y protección. El marco también incluye tres medidas generales de estas mecánicas: eficacia, eficiencia y satisfacción.
+
+La idea subyacente del marco es que algunos problemas de usabilidad, en trabajo colaborativo, no están intrínsecamente ligados al contexto social en el que se utiliza el sistema, sino que son el resultado de un apoyo pobre a las actividades básicas de trabajo colaborativo en espacios compartidos. Los métodos de evaluación existentes de bajo costo, como la evaluación heurística, los tutoriales, las observaciones de los usuarios y los cuestionarios, pueden modificarse para incluir este marco, de manera que ayude a un evaluador de trabajo colaborativo a descubrir problemas de usabilidad \cite{Gutwin:2000}.
+
+Se han identificado siete actividades principales que comprenden la mecánica de la colaboración:
+
+\begin{itemize}
+\item \textbf{Comunicación explícita}: los miembros de un grupo se proporcionan intencionalmente información, y la comunicación verbal y escrita es una piedra angular de la colaboración. En particular, las personas usan a menudo referencias deícticas (e.g., ``esta'') en combinación con la acción de apuntar a un artefacto.
+\item \textbf{Comunicación consecuente}: la gente también recoge información considerable, que es involuntariamente ``dada'' por otros mientras realizan sus actividades. Dos tipos principales de comunicación consecuencial implican la información dada por artefactos que son manipulados por otros y la información dada por las acciones características de la encarnación de una persona en el espacio de trabajo.
+\item \textbf{Coordinación de la acción}: las personas organizan sus acciones en un espacio de trabajo compartido para que no entren en conflicto con otros.
+\item \textbf{Planificación}: algunas actividades de planificación son de nivel muy alto para ser consideradas mecánicas de colaboración, pero otras ocurren repetidamente dentro del espacio de trabajo compartido.
+\item \textbf{Supervisión}: muchas de las otras mecánicas de colaboración dependen de la capacidad de monitorear y recopilar información sobre otros en el espacio de trabajo (\textit{awareness}).
+\item \textbf{Asistencia}: los miembros del grupo se ayudan unos a otros cuando es necesario.
+\item \textbf{Protección}: un peligro en el trabajo en grupo es que otros pueden alterar o destruir inadvertidamente el trabajo que otros han realizado.
+\end{itemize}
+
+La usabilidad se define como: ``el grado en que un sistema colaborativo apoya la mecánica de colaboración para un conjunto particular de usuarios y un conjunto particular de tareas'' \cite{Gutwin:2000}.
+
+Se pueden evaluar las mecánicas de colaboración examinando si un grupo puede realizarlas de manera eficaz, eficiente y satisfactoria:
+
+\begin{itemize}
+\item \textbf{Eficacia}: considera si la actividad se completó exitosamente, así como el número y la gravedad de los errores cometidos durante esa actividad.
+\item \textbf{Eficiencia}: examina los recursos (como el tiempo o el esfuerzo) requeridos para llevar a cabo la actividad.
+\item \textbf{Satisfacción}: considera si los miembros del grupo están razonablemente satisfechos con los procesos y resultados de cada una de las actividades de colaboración.
+\end{itemize}
+
+La combinación de las siete mecánicas de trabajo colaborativo con estas tres medidas de usabilidad proporcionan un marco conceptual para evaluar sistemas colaborativos (ver Cuadro \ref{tbl:gut}).
+
+\begin{table}
+\centering
+\begin{tabular}{@{}llll@{}}
+\toprule
+ & \multicolumn{1}{c}{Eficacia} & \multicolumn{1}{c}{Eficiencia} & \multicolumn{1}{c}{Satisfacción} \\ \midrule
+Comunicación explícita &  &  &  \\
+Comunicación consecuente &  &  &  \\
+Coordinación de la acción &  &  &  \\
+Planificación &  &  &  \\
+Supervisión &  &  &  \\
+Asistencia &  &  &  \\
+Protección &  &  &  \\ \bottomrule
+\end{tabular}
+\caption{Marco conceptual para evaluar la usabilidad de sistemas colaborativos.}
+\label{tbl:gut}
+\end{table}
+
+\cite{Gutwin:2000} no consideran las medidas cuantitativas que requieren métodos experimentales o análisis extensivos (e.g., medidas de rendimiento o análisis de datos). En cambio, se basan en técnicas de inspección de interfaces como:
+
+\begin{itemize}
+\item \textbf{Evaluación heurística:} define un proceso de inspección en el que varios evaluadores examinan una interfaz de usuario y juzgan su cumplimiento con principios de usabilidad reconocidos llamados ``heurísticas''. E.g., la heurísticas pueden ser declaraciones como ``proporcionar los medios para la comunicación explícita'' y ``permitir a las personas supervisar y recopilar información sobre otros en el espacio de trabajo''. El inspector, puede entonces, juzgar si la interfaz tiene los medios para cumplir con una heurística particular; si los medios están allí, el inspector puede preguntar si los usuarios pueden utilizarla con eficacia, eficiencia y satisfacción. Posibles problemas a considerar incluyen: cómo los inspectores pueden ser entrenados a los matices de estas heurísticas; si los inspectores pueden utilizarlas eficazmente para descubrir problemas de interfaz; cuántos inspectores son necesarios para descubrir la mayoría de los problemas de interfaz, y si estas heurísticas realmente cubren una gran proporción de los problemas de usabilidad.
+
+\item \textbf{Tutoriales (\textit{walkthroughs}):} aunque hay muchas variaciones de cómo realizar un tutorial, en todos ellas el inspector comienza con una descripción realista y detallada de la tarea, una descripción del usuario y una interfaz para evaluar. El inspector entonces ``camina'' a través de la interfaz, paso a paso, imaginando cada acción que el usuario tomaría mientras realiza la tarea en el sistema. Durante cada paso el inspector hace una serie de preguntas, e.g., ¿Puede la persona/grupo realizar la actividad implícita en este paso de manera efectiva, i.e., ¿La interfaz proporciona los medios para hacerlo? ¿Se puede llevar a cabo de manera eficiente, i.e., es creíble que la persona/grupo realizará el esfuerzo requerido por esta interfaz para realizar este paso? ¿Puede realizarse con satisfacción, i.e., es creíble que la persona/grupo estaría motivada para realizar este paso, y estaría contenta con el resultado? Por supuesto, hay varios problemas. En primer lugar, es mucho más fácil definir una ``persona típica'' que definir un ``grupo típico''. La riqueza y variedad de las interacciones grupales las hacen mucho más difíciles de tipificar.
+
+\item \textbf{Evaluación de usabilidad mediante observación:} se realiza observando cómo las personas realizan tareas particulares en un sistema en un entorno de laboratorio. Para que la gente hable, el evaluador a menudo les pide que ``piensen en voz alta'', i.e., decir lo que están pensando mientras están haciendo una acción. E.g., los criterios para el primer término del Cuadro \ref{tbl:gut} (comunicación explícita) pueden ser parcialmente resueltos con preguntas como ¿El sistema hizo difícil escuchar/leer lo que otros estaban diciendo/escribiendo? ¿El sistema hizo difícil entender lo que otros estaban diciendo/escribiendo? ¿El sistema dificultó señalar/especificar los elementos del espacio de trabajo? ¿El sistema hacía difícil ver y entender a lo que otros apuntaban? Por supuesto, hay varios problemas con este método. Primero, está la dificultad de adquirir personas adecuadas para las observaciones. En segundo lugar, está la dificultad de interpretar una escena basada en estas preguntas.
+
+\item \textbf{Cuestionarios:} varios investigadores abogan por la evaluación a través de cuestionarios que son llenados por las personas que utilizan el sistema. Dado que los datos son en gran medida subjetivos, las observaciones o respuestas, deben utilizarse como indicios de que pueden existir problemas en un área en particular, en lugar de evaluaciones definitivas; el acuerdo entre múltiples participantes o observadores, por supuesto, es una indicación más fuerte de que existe un problema.
+
+\end{itemize}
+
+\subsubsection{Usabilidad como medida de éxito en comunidades}
+\label{rw:pf}
+
+El uso generalizado por millones de diversos usuarios de Internet para socializar es un nuevo fenómeno, que plantea nuevos problemas para los investigadores y desarrolladores. El diseño enfocado en la usabilidad no es suficiente, pues se tiene que entender cómo la tecnología puede apoyar la interacción social y el diseño de la sociabilidad \cite{Preece:2001}.
+
+La sociabilidad se ocupa de desarrollar software, políticas y prácticas para apoyar la interacción social en línea. Tres componentes clave contribuyen a la buena sociabilidad:
+
+\begin{itemize}
+\item \textbf{Propósito}: se refiere al enfoque compartido de una comunidad sobre un interés, necesidad, información, servicio o apoyo, que proporciona una razón para que los miembros pertenezcan a la comunidad.
+\item \textbf{Gente}: denota a las personas que interactúan entre sí en la comunidad y que tienen necesidades individuales, sociales y de organización.
+\item \textbf{Políticas}: concierne al lenguaje y los protocolos que guían las interacciones de las personas y contribuyen al desarrollo del folclore y rituales que aportan un sentido de la historia y normas sociales aceptadas.
+\end{itemize}
+
+Las decisiones sobre el propósito, las personas y las políticas de los desarrolladores de la comunidad ayudan a determinar la sociabilidad inicial de una comunidad en línea.
+
+Mientras que la sociabilidad está estrechamente relacionada con la usabilidad y podría ser pensada como un nuevo género de usabilidad, sociabilidad y usabilidad tienen diferencias significativas. Mientras que la usabilidad se refiere principalmente a cómo los usuarios interactúan con la tecnología, la sociabilidad se refiere a cómo los miembros de una comunidad interactúan entre sí, a través de la tecnología de apoyo. El foco de la usabilidad es, por lo tanto, la interacción a través de la interfaz humano-computadora. El enfoque de la sociabilidad es la interacción humano-humano apoyada por la tecnología \cite{Preece:2001}.
+
+Los principales problemas de usabilidad, para las comunidades en línea, son similares a los de la mayoría de los otros programas basados en la web, pero los siguientes cuatro componentes son particularmente importantes porque se ocupan del papel del software, como medio y lugar de interacción social:
+
+\begin{itemize}
+\item \textbf{Soporte de diálogo e interacción social}: se refiere a las sugerencias y comentarios que soportan la interacción, la facilidad con la que se pueden ejecutar comandos y mover avatares, las relaciones espaciales en el entorno, etc.
+\item \textbf{Diseño de información}: denota cuán fácil de leer, comprender y estéticamente agradable  es la información asociada con la comunidad.
+\item \textbf{Navegación}: indica con cuánta facilidad el usuario puede moverse y encontrar lo que quiera en la comunidad y el sitio web asociado.
+\item \textbf{Acceso}: designa los requisitos para descargar y ejecutar software de la comunidad en línea deben ser claros.
+\end{itemize}
+
+El marco para la sociabilidad (i.e., propósito, gente y políticas) y la usabilidad (i.e., diálogo y apoyo de interacción social, diseño de información, navegación y acceso) proporcionan una base para identificar características y medidas que ayudan a describir el éxito de las comunidades en línea \cite{Preece:2001}. El Cuadro \ref{tbl:pre} contiene ejemplos de determinantes de éxito en cada apartado descrito anteriormente.
+
+
+\begin{table}
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}ccl@{}}
+\toprule
+\textit{Framework} & Criterio & \multicolumn{1}{c}{Ejemplos de determinantes de éxito} \\ \midrule
+\multirow{3}{*}{Sociabilidad} & Propósito & \begin{tabular}[c]{@{}l@{}}¿Cuántos y qué tipo de mensajes (o comentarios por miembro) se están enviando?\\ ¿Hay muchas desviaciones de tema en una misma discusión?\\ ¿Cuánta interactividad está ocurriendo?\\ ¿Cuánto y qué tipo de reciprocidad ocurre?\\ ¿Cuál es la calidad de las contribuciones e interacciones de los participantes?\end{tabular} \\ \cmidrule(l){2-3} 
+ & Gente & \begin{tabular}[c]{@{}l@{}}¿Cuántos y qué tipos de personas están participando en la comunidad?\\ ¿Qué hacen y qué papeles están tomando?\\ ¿Qué tan experimentados son?\\ ¿Cuáles son sus edades, género y necesidades especiales?\end{tabular} \\ \cmidrule(l){2-3} 
+ & Políticas & \begin{tabular}[c]{@{}l@{}}¿Qué políticas existen? \\ E.g., las políticas de registro y moderación para disuadir el mal comportamiento. \\ ¿Cuán efectivas son las políticas? \\ ¿Cómo se fomenta el desarrollo de las relaciones? \\ E.g., ¿Qué tipos de políticas fomentan la confiabilidad y qué tan efectivas son estas políticas?\end{tabular} \\ \midrule
+\multirow{4}{*}{Usabilidad} & \begin{tabular}[c]{@{}c@{}}Soporte de diálogo e \\ interacción social\end{tabular} & \begin{tabular}[c]{@{}l@{}}¿Cuánto tiempo tarda el usuario en aprender sobre el diálogo y el apoyo social?\\ ¿Cuánto tiempo tarda el usuario en enviar o leer un mensaje, o realizar alguna otra acción? \\ ¿Están satisfechos los usuarios? \\ ¿Cuánto recuerdan los usuarios acerca del diálogo y el apoyo social, y cuántos errores hacen?\end{tabular} \\ \cmidrule(l){2-3} 
+ & \begin{tabular}[c]{@{}c@{}}Diseño de \\ información\end{tabular} & \begin{tabular}[c]{@{}l@{}}¿Cuánto tiempo tarda un usuario en aprender a encontrar información?\\ ¿Cuánto tiempo tarda un suaurio en alcanzar una determinada meta orientada a la información?\\ ¿Cuánto recuerdan los usuarios después de usar el sistema?\\ ¿Pueden los usuarios acceder a la información que necesitan sin cometer errores?\end{tabular} \\ \cmidrule(l){2-3} 
+ & Navegación & \begin{tabular}[c]{@{}l@{}}¿Cuánto tiempo tarda un usuario en aprender a navegar a través del software? \\ ¿Pueden los usuarios llegar donde quieren ir en un tiempo razonable?\\ ¿Cuánto recuerdan los usuarios acerca de la navegación?\\ ¿Cuán satisfechos están? Cuántos y qué tipos de errores hacen.\end{tabular} \\ \cmidrule(l){2-3} 
+ & Acceso & \begin{tabular}[c]{@{}l@{}}¿Pueden los usuarios acceder a todos los componentes de software que necesitan?\\ ¿Pueden cargarlos y ejecutarlos en un tiempo razonable?\\ ¿Son razonables los tiempos de respuesta?\\ ¿Qué problemas encuentran al intentar descargar y ejecutar software?\end{tabular} \\ \bottomrule
+\end{tabular}%
+}
+\caption{Marco conceptual de sociabilidad y usabilidad en comunidades.}
+\label{tbl:pre}
+\end{table}
+
+%(ver Cuadro \ref{tbl:pre})
+
+\iffalse
+
+\begin{table}
+\centering
+\begin{tabular}{@{}llllll@{}}
+\toprule
+ & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Velocidad de \\ aprendizaje\end{tabular}} & \multicolumn{1}{c}{Productividad} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}c@{}}Satisfacción \\ del usuario\end{tabular}} & \multicolumn{1}{c}{Conservación} & \multicolumn{1}{c}{Errores} \\ \midrule
+\begin{tabular}[c]{@{}l@{}}Soporte de diálogo \\ e interacción social\end{tabular} &  &  &  &  &  \\
+Diseño de información &  &  &  &  &  \\
+Navegación &  &  &  &  &  \\
+Acceso &  &  &  &  &  \\ \bottomrule
+\end{tabular}
+\caption{Marco conceptual de usabilidad en comunidades.}
+\label{tbl:pre}
+\end{table}
+
+\fi
+
+%\newpage
+\subsubsection{Feeding Milan}
+\label{rw:fm}
+
+Feeding Milan es un proyecto de investigación sobre el desarrollo sostenible en un lugar, centrado en la importancia de utilizar un enfoque de CCD y prototipos de servicios, como estrategias para construir redes colaborativas de alimentos. En este contexto, el desarrollo urbano y periurbano sostenible es el objetivo central del trabajo, donde se plantea la hipótesis de que sólo mediante el uso de recursos locales y la activación de servicios colaborativos y abiertos es posible lograr mejoras reales, tangibles y efectivas en calidad de vida y beneficios ambientales \cite{Cantu:2013}.
+
+Feeding Milan es un marco de trabajo que consta de varios proyectos locales. Cada uno de ellos está diseñado para ser autosustentable, en términos de gestión y economía. Esto significa que los diseñadores son sólo los promotores de estos proyectos: su papel es ayudar al servicio a ponerse en marcha y luego dejarlo a la gestión de los actores locales. Así, los actores locales tienen que estar involucrados en el proceso de diseño desde el principio.
+
+Cada idea de servicio es parte de un proceso de diseño, que comienza con una propuesta de concepto para ser discutida y co-diseñada con una comunidad más grande de usuarios potenciales, actores locales y expertos, convirtiéndose en un objeto de discusión (ver Figura \ref{img:milan}).
+
+El proceso de creación de prototipos de un servicio incluye las siguientes actividades:
+
+\begin{itemize}
+\item \textbf{Evaluación comparativa}: consiste en una investigación sobre proyectos similares o complementarios, ayudando a generar ideas para una solución de servicio local.
+\item \textbf{Entrevistas con los principales usuarios}: requiere la participación de usuarios de servicios similares, centrándose en experiencias, sentimientos y motivaciones que puedan influir en el diseño de la solución.
+\item \textbf{Actores de servicios y activación de recursos}: ¿Quién está trabajando en temas complementarios o podría estar interesado en el proyecto? Al responder a esta pregunta, es posible listar los actores por categoría, empezar a ponerse en contacto con ellos y adaptar la idea de servicio a las necesidades y características reales de los actores locales.
+\item \textbf{Desarrollo de sistemas de servicio}: utilizando las herramientas típicas de diseño de servicios (e.g., mapa del sistema, \textit{storyboards}, tableros de actividades) para desarrollar la idea de servicio y describir cómo funcionará el sistema general y cómo interactuarán las partes interesadas.
+\item \textbf{Prueba de tiempo de ejecución}: precisa una primera implementación del servicio en un período de tiempo limitado.
+\item \textbf{Supervisión y rediseño de servicios}: recopilando información de los usuarios durante la prueba de tiempo de ejecución y compartiéndola con los agricultores, mediante el desarrollo de una encuesta en línea y un sistema de evaluación entre pares.
+\end{itemize}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=1.0\textwidth]{milan.png}
+\end{center}
+\caption{Proceso de diseño centrado en la comunidad.}
+\label{img:milan}
+\end{figure}
+
+El CCD no se centra sólo en el usuario, sino en toda la comunidad como el facilitador del cambio local, como un recurso a valorizar y del cual aprender.
+
+Trabajando con este enfoque, se requiere que los profesionales del diseño tengan dos competencias principales: por un lado, la capacidad de obtener conocimiento sobre la comunidad por inmersión en el campo y de desarrollar relaciones empáticas con sus miembros. Por otro lado, se requiere la habilidad de utilizar su conocimiento para diseñar con y para la comunidad, para desarrollar herramientas que faciliten el co-diseño de nuevas soluciones coherentes con el contexto y para permitir a los no diseñadores aplicar sus conocimientos y habilidades profesionales a los temas discutidos \cite{Cantu:2013}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Análisis comparativo}
+\label{rw:cc}
+
+De acuerdo a la búsqueda bibliográfica detallada en la Sección \ref{rw}, en este apartado se pone en evidencia que el problema de estudio planteado, en este proyecto de investigación, no ha sido solucionado previamente.
+
+AttrakDiff (ver Sección \ref{rw:ad}) evalúa aspectos pragmáticos y hedónicos para todo tipo de productos de software, así que esta generalización es también su debilidad. Es una buena herramienta para realizar una primera evaluación y ver si el diseño de un producto coincide con las necesidades de sus usuarios. Sin embargo, es necesario que los evaluadores tengan muy claro las cuestiones que quieren evaluar, ya que no se miden las experiencias \textit{per se}, sino las reflexiones de una experiencia.
+
+El marco planteado por Gutwin y Greenberg (ver Sección \ref{rw:gf}) es sólo un marco teórico; sus autores no llegaron a implementarlo, de manera que no hay evidencia de su efecto como método de evaluación. Sólo identifica la usabilidad en tres elementos genéricos, de modo que no se especifica cómo se debe medir un sistema en función de esos tres elementos.
+
+El trabajo planteado por Preece (ver Sección \ref{rw:pf}) es igualmente teórico, aunque a diferencia de Gutwin y Greenberg, sí se especifica con mayor detalle las métricas de usabilidad. No obstante, tales métricas tienen un carácter heurístico, por lo que su implementación se deja a criterio del evaluador.
+
+Feeding Milan (ver Sección \ref{rw:fm}) presenta una metodología y una serie de aplicaciones, ambas con un enfoque de CCD; empero, no se detalla ningún proceso de evaluación.
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Section 9 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newpage
+\section{Contribuciones o resultados esperados}
+
+La principal contribución del trabajo de tesis será el método de evaluación de usabilidad para comunidades web. Si bien es cierto que es muy difícil encontrar una fórmula para crear una comunidad web exitosa de forma constante, múltiples estudios en el estado del arte revelan que la usabilidad es parte clave para que cualquier sistema cumpla con su cometido. La detección de problemas de usabilidad, mediante un método de evaluación, ayudará a los desarrolladores en su proceso de diseño.
+
+Se obtendrán características contextuales de las comunidades web, así como de los usuarios pertenecientes a las mismas, lo que ayudará a entender mejor los resultados que se obtengan del método de evaluación.
+
+Las métricas de evaluación que se especifiquen, contribuirán a la definición de usabilidad, por lo que serán útiles para comparar y diseñar otros métodos de evaluación.
+
+Al aplicar el método de evaluación a diferentes comunidades web, no solamente se habrá dado un paso más a comparación de los trabajos relacionados (ver Sección \ref{rw:cc}), sino que también se identificarán problemas de usabilidad de las comunidades web.
+
+La herramienta web, que se desarrollará, permitirá a los evaluadores aplicar el método de evaluación, de manera digital, desde las pruebas con usuarios finales, hasta la presentación de resultados mediante gráficas y datos porcentuales.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+\clearpage
+\addappheadtotoc
+\appendixpage
+
+\section{Análisis de redes sociales}
+\label{apx:sna}
+
+\cite{White:2012} analizaron puntos importantes sobre el diseño y funcionamiento de cinco redes sociales:
+
+\begin{itemize}
+
+\item \textbf{Foros}: un foro de Internet o un foro de mensajes es un sitio de discusión en línea. Los foros de Internet tienen una estructura similar a un árbol: por lo general, se discuten diferentes temas dentro de diferentes secciones temáticas y a veces sub-secciones \cite{Holtz:2012}.
+\begin{itemize}
+\item Temas: ordenados por último mensaje.
+\item Comentarios: los más viejos primero, paginados, hilo sencillo.
+\item Identidad: nombre de usuario, avatares, ubicación, reputación (fecha de ingreso y número de mensajes).
+\item Creación: necesario iniciar sesión, texto, imágenes, citas.
+\end{itemize}
+
+\item \textit{\textbf{Slashdot}}: es un sitio web de noticias tecnológicas fundado en 1997. Publica historias escritas por editores o presentadas por usuarios y permite a los usuarios comentarlas \cite{Kunegis:2009}.
+\begin{itemize}
+\item Moderadores: los enlaces deben ser aprobados por moderadores.
+\item Densidad: sólo un par de enlaces encajan en la primera página.
+\item Velocidad: acerca de un nuevo enlace por hora.
+\end{itemize}
+
+\item \textit{\textbf{Delicious}}: es un servicio de \textit{bookmarking} social de rápido crecimiento. Permite a sus usuarios recopilar y compartir de forma centralizada sus marcadores, que pueden referirse a cualquier recurso de la web siempre y cuando este recurso pueda ser identificado por una URL \cite{Wetzker:2008}.
+\begin{itemize}
+\item Muchos enlaces: no hay moderadores, por lo que hay muchos más enlaces en el sistema.
+\item Densidad: el diseño mínimo permite una alta densidad de contenido.
+\item ¡Aburrido!: la gente marca enlaces aburridos.
+\item Herramienta: \textit{Delicious} es una herramienta, no una comunidad.
+\end{itemize}
+
+\item \textit{\textbf{Reddit}}: es una plataforma impulsada por la comunidad para enviar, comentar y calificar enlaces y mensajes de texto \cite{Singer:2014}.
+\begin{itemize}
+\item Alimentado por el usuario: los enlaces son enviados y votados por la comunidad.
+\item Dinámica: el contenido sube y baja, i.e., el buen contenido sube rápidamente y cae lentamente.
+\item Densidad: cuantos más enlaces se pongan en la portada, hay más probabilidades de complacer al usuario.
+\item Sólo los hechos: sólo nombre de usuario y contraseña. Sin nombre ni correo electrónico.
+\item ¡Silencio!: los comentarios con puntuaciones negativas están ocultos.
+\end{itemize}
+
+\item \textit{\textbf{UserVoice}}: es una empresa de \textit{Software-as-a-Service} con sede en San Francisco que crea herramientas de compromiso con el cliente \cite{Samuel:2014}.
+\begin{itemize}
+\item Temas: ordenado por votos de usuarios. La redacción de los temas se hace en imperativo.
+\item Identidad: los usuarios se registran con su nombre real, con sólo su correo electrónico o bien son anónimos.
+\end{itemize}
+
+\end{itemize}
+
+\section{Proyectos de ciencia ciudadana}
+\label{apx:csp}
+
+Los proyectos de ciencia ciudadana en línea involucran a voluntarios en la recolección, análisis y curaduría de datos científicos. Los voluntarios suelen carecer de credenciales formales y no ocupan cargos profesionales en instituciones o proyectos científicos, más bien participan en actividades científicas relacionadas con sus intereses personales \cite{Rotman:2012}.
+
+Ejemplos de proyectos de ciencia ciudadana incluyen entre otros:
+
+\begin{itemize}
+\item \textbf{\textit{SETI@home}}
+
+\textit{SETI@home} (``SETI en casa'') \cite{wiki:002} es un proyecto \textit{crowdsourcing} basado en Internet que emplea la plataforma de software BOINC, organizada por el Laboratorio de Ciencias Espaciales de la Universidad de California en Berkeley. Su propósito es analizar señales de radio, buscando signos de inteligencia extraterrestre, que es una de las muchas actividades emprendidas como parte del esfuerzo mundial de SETI.
+
+\textit{SETI@home} fue lanzado al público el 17 de mayo de 1999, convirtiéndose en la tercera aplicación a gran escala de la computación distribuida a través de Internet con fines de investigación.
+
+\item \textbf{\textit{Smithsonian Transcription Center}}
+
+El \textit{Smithsonian Transcription Center} \cite{wiki:001} es un proyecto de transcripción \textit{crowdsourcing} que tiene como objetivo ayudar con la preservación y digitalización de material manuscrito en la \textit{Smithsonian Institution}. El centro de transcripción cita cinco razones por las que la transcripción importa: descubrimiento, investigación en humanidades, investigación científica, educación y legibilidad. Las colecciones disponibles para la transcripción incluyen documentos tales como cuadernos científicos de campo, diarios del artista y cuadernos de bitácora de astronomía.
+
+El \textit{Smithsonian Transcription Center} comenzó en junio de 2013 y pasó aproximadamente un año en fase de prueba beta. El 12 de agosto de 2014 se lanzó al público el sitio web del centro de transcripción. Además de transcribir, los voluntarios revisan el trabajo presentado antes de que sea enviado para su aprobación. La transcripción final es entonces revisada por el personal del \textit{Smithsonian} y, una vez aceptada, tanto las imágenes originales de la obra como la transcripción se mantienen en línea.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\bibliographystyle{apalike}
+\bibliography{biblio}
+
+\end{document}
